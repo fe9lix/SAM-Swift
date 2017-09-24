@@ -1,6 +1,6 @@
 import Foundation
 
-/// Model for the entire application ("Single State Tree").
+/// Model for the entire application ("Single Model Tree").
 /// The actual (control) state will be derived from the values of the Model.
 /// The Model exposes only one method for presenting data (Proposal) that is then accepted or rejected.
 /// The Model actually mutates its properties while enforcing its integrity rules.
