@@ -21,6 +21,8 @@ final class LoadLatestGif {
         }
     }
     
+    deinit { print("deinit", self) }
+    
     /// Loads the main HTML as Data.
     private func loadHTML(completion: @escaping (Data?) -> Void) {
         URLSession.shared.dataTask(with: url, completionHandler: { (data, _, error) in

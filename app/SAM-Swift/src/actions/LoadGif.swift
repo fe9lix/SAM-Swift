@@ -25,6 +25,8 @@ final class LoadGif {
         }
     }
     
+    deinit { print("deinit", self) }
+    
     /// Loads the HTML as Data and gets the actual URL (after a potential redirect).
     private func loadHTML(from url: URL, completion: @escaping (Data, URL) -> Void) {
         URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
