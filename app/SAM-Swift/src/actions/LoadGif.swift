@@ -40,16 +40,28 @@ final class LoadGif {
     
     /// Parses the Gif attributes from the HTML Data and loads the Gif as Data.
     private func loadGif(from data: Data) -> [AnyHashable: Any] {
+        guard let htmlString = String(data: data, encoding: .utf8) else {
+            print("Could not convert data to HTML string.")
+            return[:]
+        }
+        
+        guard let doc = try? HTML(html: htmlString, encoding: .utf8) else {
+            print("Could not create doc from HTML string.")
+            return [:]
+        }
+        
         guard
-            let htmlString = String(data: data, encoding: .utf8),
-            let doc = try? HTML(html: htmlString, encoding: .utf8),
             let title = doc.css("#post1 h3").first?.text,
             let link = doc.css("#post1 img").first?["src"],
-            let url = URL(string: link),
-            let data = try? Data(contentsOf: url)
+            let url = URL(string: link)
             else {
-                print("Could not parse gif.")
+                print("Could not parse Gif.")
                 return [:]
+        }
+        
+        guard let data = try? Data(contentsOf: url) else {
+            print("Could not load Gif data for: \(url)")
+            return [:]
         }
         
         return [
