@@ -32,8 +32,11 @@ final class Model {
         var shouldRender = true
    
         isLoading = data["isLoading"] as? Bool ?? false
+        
         if let errorData = data["error"] as? [AnyHashable: Any] {
             error = ModelError(errorData)
+        } else {
+            error = nil
         }
         
         if let gifData = data["gif"] as? [AnyHashable: Any] {
