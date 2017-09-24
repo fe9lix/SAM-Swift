@@ -46,4 +46,4 @@ More info on the [SAM website](http://sam.js.org).
 
 The app folder contains a complete and fully documented example of the SAM pattern. The app basically loads, extracts, and displays animated Gifs from the site "The Coding Love". 
 
-<img src="https://raw.githubusercontent.com/fe9lix/SAM-Swift/master/resources/app.png" width="464">
+<img src="https://raw.githubusercontent.com/fe9lix/SAM-Swift/master/resources/app.png" width="400">
