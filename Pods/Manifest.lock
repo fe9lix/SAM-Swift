@@ -1,0 +1,25 @@
+PODS:
+  - FLAnimatedImage (1.0.12)
+  - Kanna (2.2.1)
+
+DEPENDENCIES:
+  - FLAnimatedImage
+  - Kanna (from `https://github.com/tid-kijyun/Kanna`, branch `feature/v4.0.0`)
+
+EXTERNAL SOURCES:
+  Kanna:
+    :branch: feature/v4.0.0
+    :git: https://github.com/tid-kijyun/Kanna
+
+CHECKOUT OPTIONS:
+  Kanna:
+    :commit: 86f7f25e6eeeb21288e4477dbbf91ec894a5dad3
+    :git: https://github.com/tid-kijyun/Kanna
+
+SPEC CHECKSUMS:
+  FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
+  Kanna: 9d03f5e7aba03906fbb764eef5a83dbfb5c98fb5
+
+PODFILE CHECKSUM: d7c0a073a1d60fc2f082e0aa336c748f019f4a07
+
+COCOAPODS: 1.3.1
