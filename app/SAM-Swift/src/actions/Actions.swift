@@ -26,7 +26,13 @@ final class Actions {
     lazy var trigger: Trigger = self.createTrigger()
     
     init(_ present: @escaping ([AnyHashable: Any]) -> Void) {
-        self.present = present
+        /// Dispatch all calls to self.present to a serial dispatch queue since
+        /// they could be called from Actions running on different threads
+        /// (and thereby mutate the Model from different threads).
+        let queue = DispatchQueue(label: "SAM")
+        self.present = { data in
+            queue.async { present(data) }
+        }
     }
     
     // MARK: - Trigger

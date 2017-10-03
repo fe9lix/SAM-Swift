@@ -7,19 +7,17 @@ import Foundation
 /// After the mutation, the State is asked to render.
 final class Model {
     var state: State!
+    var data: ModelData
+    var render = true
     
-    // MARK: - Values
+    private let acceptors: [Acceptor]
     
-    /// Note: For more complex applications consisting of several larger modules,
-    /// we would probably want to organise the Model values per "component" or
-    /// use additional higher-level data structures.
+    init(_ data: ModelData, acceptors: [Acceptor]) {
+        self.data = data
+        self.acceptors = acceptors
+    }
     
-    private(set) var currentGif: Gif = Gif.empty()
-    private(set) var openedGifUrl: URL?
-    private(set) var isLoading: Bool = false
-    private(set) var error: ModelError?
-    
-    // MARK: - Acceptor
+    // MARK: - Acceptors
     
     /// The purpose of the present function is to decouple an Action from the Model, i.e.:
     /// Rather than directly mutating the Model from within an Action (which would require the Action to have the entire knowledge of the Model and application state),
@@ -29,32 +27,18 @@ final class Model {
     
     func present(_ data: [AnyHashable: Any]) {
         print("present: \(data)")
-        var shouldRender = true
-   
-        isLoading = data["isLoading"] as? Bool ?? false
-        
-        if let errorData = data["error"] as? [AnyHashable: Any] {
-            error = ModelError(errorData)
-        } else {
-            error = nil
-        }
-        
-        if let gifData = data["gif"] as? [AnyHashable: Any] {
-            let newGif = Gif(gifData)
-            shouldRender = newGif != currentGif
-            currentGif = newGif
-        }
-        
-        openedGifUrl = data["openedGifUrl"] as? URL
+        /// Reset rendering flag.
+        render = true
+        /// Run through all Model acceptors that mutate the Model data.
+        acceptors.forEach { $0.update(self, data) }
         
         /// The code here could also organized into:
         /// applyFilters() -> calculate what's changed for the view
         /// CRUD() -> persistence
         /// postProcessing() -> perform ancillary assignments
         
-        /// Ask the State to render.
-        /// We can also guard this call with a model property if rendering should be prevented in certain cases.
-        if shouldRender {
+        /// Ask the State to render if needed.
+        if render {
             state.render(self)
         }
     }

@@ -36,12 +36,11 @@ extension View {
     }
     
     func gifDetails(_ model: Model, _ trigger: @escaping Trigger) -> Description {
-        return .gifDetails(details: GifDetails(model.currentGif,
-                                               viewMode: ViewMode(model)),
+        return .gifDetails(details: GifDetails(model.data.currentGif, viewMode: ViewMode(model)),
                            trigger: trigger)
     }
     
     func openedGif(_ model: Model, _ trigger: @escaping Trigger) -> Description {
-        return .openedGif(url: model.openedGifUrl ?? URL(string: "http://thecodinglove.com")!, trigger: trigger)
+        return .openedGif(url: model.data.openedGifUrl ?? URL(string: "http://thecodinglove.com")!, trigger: trigger)
     }
 }

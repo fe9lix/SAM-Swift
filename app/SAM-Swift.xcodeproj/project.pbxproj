@@ -18,15 +18,19 @@
 		DC339E131F77C64C001B0F16 /* OpenGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC339E001F77C642001B0F16 /* OpenGif.swift */; };
 		DC339E141F77C651001B0F16 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC339E021F77C642001B0F16 /* App.swift */; };
 		DC339E151F77C651001B0F16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC339E031F77C642001B0F16 /* AppDelegate.swift */; };
-		DC339E161F77C655001B0F16 /* Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC339E051F77C642001B0F16 /* Gif.swift */; };
-		DC339E171F77C655001B0F16 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC339E061F77C642001B0F16 /* Model.swift */; };
 		DC339E181F77C658001B0F16 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC339E081F77C642001B0F16 /* State.swift */; };
 		DC339E191F77C65E001B0F16 /* App.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC339E0B1F77C642001B0F16 /* App.storyboard */; };
 		DC339E1A1F77C65E001B0F16 /* AppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC339E0C1F77C642001B0F16 /* AppViewController.swift */; };
 		DC339E1B1F77C660001B0F16 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC339E0D1F77C642001B0F16 /* View.swift */; };
 		DC339E1D1F77C6A5001B0F16 /* GifDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC339E1C1F77C6A5001B0F16 /* GifDetails.swift */; };
 		DC339E1F1F77CFDB001B0F16 /* ViewMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC339E1E1F77CFDB001B0F16 /* ViewMode.swift */; };
-		DC339E211F77D224001B0F16 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC339E201F77D224001B0F16 /* Error.swift */; };
+		DC633C961F84318800569C9C /* Acceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC633C901F84318000569C9C /* Acceptor.swift */; };
+		DC633C971F84318800569C9C /* GifAcceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC633C911F84318000569C9C /* GifAcceptor.swift */; };
+		DC633C981F84318800569C9C /* StateAcceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC633C921F84318000569C9C /* StateAcceptor.swift */; };
+		DC633C991F84318C00569C9C /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC633C8B1F84317F00569C9C /* Error.swift */; };
+		DC633C9A1F84318C00569C9C /* Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC633C8C1F84317F00569C9C /* Gif.swift */; };
+		DC633C9B1F84318C00569C9C /* ModalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC633C8D1F84317F00569C9C /* ModalData.swift */; };
+		DC633C9C1F84318F00569C9C /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC633C8E1F84318000569C9C /* Model.swift */; };
 		DC85511F1F71991B00A76DD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC85511E1F71991B00A76DD9 /* Assets.xcassets */; };
 		DC8551221F71991B00A76DD9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC8551201F71991B00A76DD9 /* LaunchScreen.storyboard */; };
 		DC85512D1F71991B00A76DD9 /* SAM_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85512C1F71991B00A76DD9 /* SAM_SwiftTests.swift */; };
@@ -66,15 +70,19 @@
 		DC339E001F77C642001B0F16 /* OpenGif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenGif.swift; sourceTree = "<group>"; };
 		DC339E021F77C642001B0F16 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		DC339E031F77C642001B0F16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DC339E051F77C642001B0F16 /* Gif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gif.swift; sourceTree = "<group>"; };
-		DC339E061F77C642001B0F16 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		DC339E081F77C642001B0F16 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		DC339E0B1F77C642001B0F16 /* App.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = App.storyboard; sourceTree = "<group>"; };
 		DC339E0C1F77C642001B0F16 /* AppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewController.swift; sourceTree = "<group>"; };
 		DC339E0D1F77C642001B0F16 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		DC339E1C1F77C6A5001B0F16 /* GifDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifDetails.swift; sourceTree = "<group>"; };
 		DC339E1E1F77CFDB001B0F16 /* ViewMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewMode.swift; sourceTree = "<group>"; };
-		DC339E201F77D224001B0F16 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		DC633C8B1F84317F00569C9C /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		DC633C8C1F84317F00569C9C /* Gif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gif.swift; sourceTree = "<group>"; };
+		DC633C8D1F84317F00569C9C /* ModalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalData.swift; sourceTree = "<group>"; };
+		DC633C8E1F84318000569C9C /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		DC633C901F84318000569C9C /* Acceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Acceptor.swift; sourceTree = "<group>"; };
+		DC633C911F84318000569C9C /* GifAcceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifAcceptor.swift; sourceTree = "<group>"; };
+		DC633C921F84318000569C9C /* StateAcceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateAcceptor.swift; sourceTree = "<group>"; };
 		DC8551141F71991B00A76DD9 /* SAM-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SAM-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC85511E1F71991B00A76DD9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DC8551211F71991B00A76DD9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -177,9 +185,9 @@
 		DC339E041F77C642001B0F16 /* model */ = {
 			isa = PBXGroup;
 			children = (
-				DC339E201F77D224001B0F16 /* Error.swift */,
-				DC339E051F77C642001B0F16 /* Gif.swift */,
-				DC339E061F77C642001B0F16 /* Model.swift */,
+				DC633C8F1F84318000569C9C /* acceptors */,
+				DC633C8A1F84317F00569C9C /* data */,
+				DC633C8E1F84318000569C9C /* Model.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -210,6 +218,26 @@
 				DC339E0C1F77C642001B0F16 /* AppViewController.swift */,
 			);
 			path = userinterface;
+			sourceTree = "<group>";
+		};
+		DC633C8A1F84317F00569C9C /* data */ = {
+			isa = PBXGroup;
+			children = (
+				DC633C8B1F84317F00569C9C /* Error.swift */,
+				DC633C8C1F84317F00569C9C /* Gif.swift */,
+				DC633C8D1F84317F00569C9C /* ModalData.swift */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		DC633C8F1F84318000569C9C /* acceptors */ = {
+			isa = PBXGroup;
+			children = (
+				DC633C901F84318000569C9C /* Acceptor.swift */,
+				DC633C911F84318000569C9C /* GifAcceptor.swift */,
+				DC633C921F84318000569C9C /* StateAcceptor.swift */,
+			);
+			path = acceptors;
 			sourceTree = "<group>";
 		};
 		DC85510B1F71991B00A76DD9 = {
@@ -558,22 +586,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC339E211F77D224001B0F16 /* Error.swift in Sources */,
+				DC633C981F84318800569C9C /* StateAcceptor.swift in Sources */,
 				DC339E1B1F77C660001B0F16 /* View.swift in Sources */,
+				DC633C9B1F84318C00569C9C /* ModalData.swift in Sources */,
 				DC339E151F77C651001B0F16 /* AppDelegate.swift in Sources */,
 				DC339E1F1F77CFDB001B0F16 /* ViewMode.swift in Sources */,
 				DC339E131F77C64C001B0F16 /* OpenGif.swift in Sources */,
 				DC339E1D1F77C6A5001B0F16 /* GifDetails.swift in Sources */,
 				DC339E0E1F77C64C001B0F16 /* Actions.swift in Sources */,
+				DC633C971F84318800569C9C /* GifAcceptor.swift in Sources */,
+				DC633C9A1F84318C00569C9C /* Gif.swift in Sources */,
 				DC339E181F77C658001B0F16 /* State.swift in Sources */,
+				DC633C991F84318C00569C9C /* Error.swift in Sources */,
 				DC339E111F77C64C001B0F16 /* LoadLatestGif.swift in Sources */,
 				DC339E101F77C64C001B0F16 /* LoadGif.swift in Sources */,
 				DC339E1A1F77C65E001B0F16 /* AppViewController.swift in Sources */,
-				DC339E171F77C655001B0F16 /* Model.swift in Sources */,
+				DC633C9C1F84318F00569C9C /* Model.swift in Sources */,
+				DC633C961F84318800569C9C /* Acceptor.swift in Sources */,
 				DC339E121F77C64C001B0F16 /* LoadRandomGif.swift in Sources */,
 				DC339E141F77C651001B0F16 /* App.swift in Sources */,
 				DC339E0F1F77C64C001B0F16 /* CopyGif.swift in Sources */,
-				DC339E161F77C655001B0F16 /* Gif.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -39,11 +39,11 @@ struct State {
     /// States can also be thought of as "ranges of property values" but often are reduced to a single value.
     
     private func gifDetails(_ model: Model) -> Bool {
-        return model.openedGifUrl == nil
+        return model.data.openedGifUrl == nil
     }
     
     private func gifOpened(_ model: Model) -> Bool {
-        return model.openedGifUrl != nil
+        return model.data.openedGifUrl != nil
     }
     
     // MARK: - Next Action Predicate (NAP)
@@ -58,7 +58,7 @@ struct State {
     /// First determine the current state representation on a background queue.
     /// Then perform the next action predicate on the main queue.
     func render(_ model: Model) {
-        DispatchQueue.global(qos: .userInteractive).async {
+        DispatchQueue.global().async {
             let representation = self.representation(model)
             DispatchQueue.main.sync {
                 self.view.display(representation)

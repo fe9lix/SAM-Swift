@@ -11,7 +11,10 @@ final class App {
     private let state: State
     
     init(_ window: UIWindow) {
-        model = Model()
+        model = Model(ModelData(), acceptors: [
+            StateAcceptor(),
+            GifAcceptor()
+        ])
         let actions = Actions(model.present)
         let userInterface = AppViewController.create { actions.trigger(.latestGif) }
         window.rootViewController = userInterface
