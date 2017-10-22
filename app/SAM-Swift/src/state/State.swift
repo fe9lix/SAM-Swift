@@ -60,7 +60,7 @@ struct State {
     func render(_ model: Model) {
         DispatchQueue.global().async {
             let representation = self.representation(model)
-            DispatchQueue.main.sync {
+            DispatchQueue.main.async {
                 self.view.display(representation)
                 self.nextAction(model)
             }

@@ -29,7 +29,7 @@
 		DC633C981F84318800569C9C /* StateAcceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC633C921F84318000569C9C /* StateAcceptor.swift */; };
 		DC633C991F84318C00569C9C /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC633C8B1F84317F00569C9C /* Error.swift */; };
 		DC633C9A1F84318C00569C9C /* Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC633C8C1F84317F00569C9C /* Gif.swift */; };
-		DC633C9B1F84318C00569C9C /* ModalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC633C8D1F84317F00569C9C /* ModalData.swift */; };
+		DC633C9B1F84318C00569C9C /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC633C8D1F84317F00569C9C /* ModelData.swift */; };
 		DC633C9C1F84318F00569C9C /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC633C8E1F84318000569C9C /* Model.swift */; };
 		DC85511F1F71991B00A76DD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC85511E1F71991B00A76DD9 /* Assets.xcassets */; };
 		DC8551221F71991B00A76DD9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC8551201F71991B00A76DD9 /* LaunchScreen.storyboard */; };
@@ -78,7 +78,7 @@
 		DC339E1E1F77CFDB001B0F16 /* ViewMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewMode.swift; sourceTree = "<group>"; };
 		DC633C8B1F84317F00569C9C /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		DC633C8C1F84317F00569C9C /* Gif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gif.swift; sourceTree = "<group>"; };
-		DC633C8D1F84317F00569C9C /* ModalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalData.swift; sourceTree = "<group>"; };
+		DC633C8D1F84317F00569C9C /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 		DC633C8E1F84318000569C9C /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		DC633C901F84318000569C9C /* Acceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Acceptor.swift; sourceTree = "<group>"; };
 		DC633C911F84318000569C9C /* GifAcceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifAcceptor.swift; sourceTree = "<group>"; };
@@ -225,7 +225,7 @@
 			children = (
 				DC633C8B1F84317F00569C9C /* Error.swift */,
 				DC633C8C1F84317F00569C9C /* Gif.swift */,
-				DC633C8D1F84317F00569C9C /* ModalData.swift */,
+				DC633C8D1F84317F00569C9C /* ModelData.swift */,
 			);
 			path = data;
 			sourceTree = "<group>";
@@ -588,7 +588,7 @@
 			files = (
 				DC633C981F84318800569C9C /* StateAcceptor.swift in Sources */,
 				DC339E1B1F77C660001B0F16 /* View.swift in Sources */,
-				DC633C9B1F84318C00569C9C /* ModalData.swift in Sources */,
+				DC633C9B1F84318C00569C9C /* ModelData.swift in Sources */,
 				DC339E151F77C651001B0F16 /* AppDelegate.swift in Sources */,
 				DC339E1F1F77CFDB001B0F16 /* ViewMode.swift in Sources */,
 				DC339E131F77C64C001B0F16 /* OpenGif.swift in Sources */,
