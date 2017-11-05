@@ -31,16 +31,15 @@ extension View {
     /// For more complex screens, the enum cases could contain structs describing an entire screen.
     enum Description {
         case empty
-        case gifDetails(details: GifDetails, trigger: Trigger)
-        case openedGif(url: URL, trigger: Trigger)
+        case gifDetails(details: GifDetails)
+        case openedGif(url: URL)
     }
     
-    func gifDetails(_ model: Model, _ trigger: @escaping Trigger) -> Description {
-        return .gifDetails(details: GifDetails(model.data.currentGif, viewMode: ViewMode(model)),
-                           trigger: trigger)
+    func gifDetails(_ model: Model) -> Description {
+        return .gifDetails(details: GifDetails(model.currentGif, viewMode: ViewMode(model)))
     }
     
-    func openedGif(_ model: Model, _ trigger: @escaping Trigger) -> Description {
-        return .openedGif(url: model.data.openedGifUrl ?? URL(string: "http://thecodinglove.com")!, trigger: trigger)
+    func openedGif(_ model: Model) -> Description {
+        return .openedGif(url: model.openedGifUrl ?? URL(string: "http://thecodinglove.com")!)
     }
 }

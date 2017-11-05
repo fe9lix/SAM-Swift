@@ -1,21 +1,32 @@
 import Foundation
 
 /// Model for the entire application ("Single Model Tree").
+/// Of type Class (not Struct) since we don't want to copy the entire
+/// Model tree when a single property is mutated.
+
 /// The actual (control) state will be derived from the values of the Model.
 /// The Model exposes only one method for presenting data (Proposal) that is then accepted or rejected.
 /// The Model actually mutates its properties while enforcing its integrity rules.
 /// After the mutation, the State is asked to render.
+
+/// Note: For more complex applications consisting of several larger modules,
+/// we would probably want to organise the Model values per "component" or
+/// use additional higher-level data structures.
+
 final class Model {
     var state: State!
-    var data: ModelData
+    var currentGif: Gif = Gif.empty()
+    var openedGifUrl: URL?
+    var isLoading: Bool = false
+    var error: ModelError?
     var render = true
     
-    private let acceptors: [Acceptor]
+    private let acceptors: [Acceptor] = [
+        StateAcceptor(),
+        GifAcceptor()
+    ]
     
-    init(_ data: ModelData, acceptors: [Acceptor]) {
-        self.data = data
-        self.acceptors = acceptors
-    }
+    init() {}
     
     // MARK: - Acceptors
     

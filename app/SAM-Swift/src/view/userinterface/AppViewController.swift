@@ -9,18 +9,20 @@ final class AppViewController: UIViewController, SFSafariViewControllerDelegate 
     @IBOutlet weak var gifImageView: FLAnimatedImageView!
     @IBOutlet weak var buttonsStackView: UIStackView!
     
+    /// Intents can be triggered using this function type.
+    private var trigger: Trigger?
     /// Called when the view is loaded so that the inital action can be externally triggered.
     private var didLoad: (() -> Void)?
     
     /// This view state is only required for wired IBActions that would otherwise not be able
     /// to access data from the view descriptions.
     private var gifDetails: GifDetails?
-    private var trigger: Trigger?
     
     // MARK: - Lifecycle
     
-    class func create(_ didLoad: @escaping () -> Void) -> AppViewController {
+    class func create(trigger: Trigger?, _ didLoad: @escaping () -> Void) -> AppViewController {
         let appViewController = UIStoryboard(name: "App", bundle: Bundle(for: self)).instantiateInitialViewController() as! AppViewController
+        appViewController.trigger = trigger
         appViewController.didLoad = didLoad
         return appViewController
     }
@@ -45,11 +47,10 @@ final class AppViewController: UIViewController, SFSafariViewControllerDelegate 
     func display(_ view: View.Description) {
         switch view {
         case .empty: break            
-        case let .gifDetails(details, trigger):
+        case let .gifDetails(details):
             self.gifDetails = details
-            self.trigger = trigger
             updateGif(details)
-        case let .openedGif(url, _):
+        case let .openedGif(url):
             openGif(url: url)
         }
     }
@@ -104,10 +105,7 @@ final class AppViewController: UIViewController, SFSafariViewControllerDelegate 
     }
     
     @IBAction func didTapCopy(_ sender: Any) {
-        guard
-            let title = gifDetails?.title,
-            let url = gifDetails?.sourceUrl
-            else { return }
+        guard let title = gifDetails?.title, let url = gifDetails?.sourceUrl else { return }
         trigger?(.copyGif(title: title, url: url))
     }
     

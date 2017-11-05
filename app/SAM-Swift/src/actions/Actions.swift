@@ -29,7 +29,7 @@ final class Actions {
         /// Dispatch all calls to self.present to a serial dispatch queue since
         /// they could be called from Actions running on different threads
         /// (and thereby mutate the Model from different threads).
-        let queue = DispatchQueue(label: "SAM")
+        let queue = DispatchQueue(label: "sam.actions.present")
         self.present = { data in
             queue.async { present(data) }
         }
@@ -40,14 +40,18 @@ final class Actions {
     /// Returns a closure with a mapping from Intent to Action.
     /// Trigger is used in the UI to trigger Intents -> Actions.
     private func createTrigger() -> Trigger {
+        let queue: DispatchQueue = DispatchQueue(label: "sam.actions.trigger", attributes: .concurrent)
+        
         return { [weak self] intent in
-            guard let strongSelf = self else { return }
-            
-            switch intent {
-            case .latestGif: LoadLatestGif(present: strongSelf.present)
-            case .randomGif: LoadRandomGif(present: strongSelf.present)
-            case let .copyGif(title, url): CopyGif(title: title, url: url)
-            case let .openGif(url): OpenGif(url: url, present: strongSelf.present)
+            queue.async {
+                guard let present = self?.present else { return }
+                
+                switch intent {
+                case .latestGif: LoadLatestGif(present: present)
+                case .randomGif: LoadRandomGif(present: present)
+                case let .copyGif(title, url): CopyGif(title: title, url: url)
+                case let .openGif(url): OpenGif(url: url, present: present)
+                }
             }
         }
     }

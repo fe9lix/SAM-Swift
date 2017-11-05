@@ -23,9 +23,9 @@ struct State {
         var representation: View.Description = .empty
         
         if gifDetails(model) {
-            representation = view.gifDetails(model, trigger)
+            representation = view.gifDetails(model)
         } else if gifOpened(model) {
-            representation = view.openedGif(model, trigger)
+            representation = view.openedGif(model)
         }
         
         return representation
@@ -39,11 +39,11 @@ struct State {
     /// States can also be thought of as "ranges of property values" but often are reduced to a single value.
     
     private func gifDetails(_ model: Model) -> Bool {
-        return model.data.openedGifUrl == nil
+        return model.openedGifUrl == nil
     }
     
     private func gifOpened(_ model: Model) -> Bool {
-        return model.data.openedGifUrl != nil
+        return model.openedGifUrl != nil
     }
     
     // MARK: - Next Action Predicate (NAP)
@@ -53,17 +53,16 @@ struct State {
     /// The NAP is also a pure function of the Model.
     private func nextAction(_ model: Model) {}
     
-    // MARK: - Reactive Loop
+    // MARK: - Render Loop
     
-    /// First determine the current state representation on a background queue.
+    /// First determine the current state representation (still on background queue).
     /// Then perform the next action predicate on the main queue.
     func render(_ model: Model) {
-        DispatchQueue.global().async {
-            let representation = self.representation(model)
-            DispatchQueue.main.async {
-                self.view.display(representation)
-                self.nextAction(model)
-            }
+        let representation = self.representation(model)
+        
+        DispatchQueue.main.async {
+            self.view.display(representation)
+            self.nextAction(model)
         }
     }
 }
